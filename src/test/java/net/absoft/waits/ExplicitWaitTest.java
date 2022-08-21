@@ -20,8 +20,7 @@ public class ExplicitWaitTest extends BaseTest {
     driver.findElement(By.id("ajaxButton")).click();
 
     new WebDriverWait(driver, Duration.ofSeconds(20)).until(
-        ExpectedConditions.textToBe(By.cssSelector("#content > p"),
-            "Data loaded with AJAX get request."));
+        ExpectedConditions.presenceOfElementLocated(By.cssSelector("#content > p")));
   }
 
   @Test
