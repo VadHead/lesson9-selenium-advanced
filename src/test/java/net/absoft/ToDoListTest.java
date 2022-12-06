@@ -26,7 +26,7 @@ public class ToDoListTest extends BaseTest {
 		addTaskInput = driver.findElement(By.cssSelector("[placeholder='Add new todo']"));
 	}
 	
-	@Test
+	@Test(description = "Add task to ToDo List test")
 	public void addTaskTest() {
 		addTaskInput.sendKeys(taskNameToAdd);
 		addTaskInput.sendKeys(Keys.ENTER);
@@ -34,7 +34,7 @@ public class ToDoListTest extends BaseTest {
 		assertEquals(taskListItem.getText().stripLeading(), taskNameToAdd);
 	}
 	
-	@Test
+	@Test(description = "Remove task from ToDo List test")
 	public void removeTaskTest() {
 		WebElement taskListItem = driver.findElement(By.xpath(String.format(searchTaskXPath, taskNameToRemove)));
 		WebElement trashListItem = driver.findElement(
