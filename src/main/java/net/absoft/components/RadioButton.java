@@ -1,17 +1,26 @@
 package net.absoft.components;
 
 import net.absoft.BaseComponent;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class RadioButton extends BaseComponent {
 	
-	private final WebElement greenButton = driver.findElement(By.cssSelector("[value=green]"));
-	private final WebElement blueButton = driver.findElement(By.cssSelector("[value=blue]"));
-	private final WebElement yellowButton = driver.findElement(By.cssSelector("[value=yellow]"));
-	private final WebElement orangeButton = driver.findElement(By.cssSelector("[value=orange]"));
-	private final WebElement purpleButton = driver.findElement(By.cssSelector("[value=purple]"));
+	@FindBy(css = "[value=green]")
+	private WebElement greenButton;
+	
+	@FindBy(css = "[value=blue]")
+	private WebElement blueButton;
+	
+	@FindBy(css = "[value=yellow]")
+	private  WebElement yellowButton;
+	
+	@FindBy(css = "[value=orange]")
+	private  WebElement orangeButton;
+	
+	@FindBy(css = "[value=purple]")
+	private  WebElement purpleButton;
 	
 	public RadioButton(WebDriver driver) {
 		super(driver);

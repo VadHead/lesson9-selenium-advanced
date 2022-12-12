@@ -4,6 +4,7 @@ import net.absoft.BaseComponent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
@@ -13,14 +14,17 @@ public class DatePicker extends BaseComponent {
 	private final String monthPicker = "//div[@class='datepicker-months']//span[text()='%s']";
 	private final String dayPicker = "//div[@class='datepicker-days']//td[text()='%s']";
 	
-	private final WebElement datePickerDate = driver.findElement(
-			By.xpath("//div[@class='datepicker-days']//th[@class='datepicker-switch']"));
-	private final WebElement datePickerYear = driver.findElement(
-			By.xpath("//div[@class='datepicker-months']//th[@class='datepicker-switch']"));
-	private final WebElement datePickerYearsPrev = driver.findElement(
-			By.xpath("//div[@class='datepicker-years']//th[@class='prev']"));
-	private final WebElement datePickerYearsNext = driver.findElement(
-			By.xpath("//div[@class='datepicker-years']//th[@class='next']"));
+	@FindBy(xpath = "//div[@class='datepicker-days']//th[@class='datepicker-switch']")
+	private WebElement datePickerDate;
+	
+	@FindBy(xpath = "//div[@class='datepicker-months']//th[@class='datepicker-switch']")
+	private WebElement datePickerYear;
+	
+	@FindBy(xpath = "//div[@class='datepicker-years']//th[@class='prev']")
+	private WebElement datePickerYearsPrev ;
+	
+	@FindBy(xpath = "//div[@class='datepicker-years']//th[@class='next']")
+		private WebElement datePickerYearsNext ;
 	
 	public DatePicker(WebDriver driver) {
 		super(driver);

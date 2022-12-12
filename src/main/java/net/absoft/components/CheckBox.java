@@ -1,19 +1,26 @@
 package net.absoft.components;
 
 import net.absoft.BaseComponent;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.Arrays;
 import java.util.List;
 
 public class CheckBox extends BaseComponent {
 	
-	private final WebElement option1 = driver.findElement(By.cssSelector("[value='option-1']"));
-	private final WebElement option2 = driver.findElement(By.cssSelector("[value='option-2']"));
-	private final WebElement option3 = driver.findElement(By.cssSelector("[value='option-3']"));
-	private final WebElement option4 = driver.findElement(By.cssSelector("[value='option-4']"));
+	@FindBy(css = "[value='option-1']")
+	private WebElement option1;
+	
+	@FindBy(css = "[value='option-2']")
+	private  WebElement option2;
+	
+	@FindBy(css = "[value='option-3']")
+	private  WebElement option3;
+	
+	@FindBy(css = "[value='option-4']")
+	private  WebElement option4;
 	
 	public CheckBox(WebDriver driver) {
 		super(driver);
